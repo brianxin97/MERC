@@ -1,3 +1,5 @@
+![MERC](figure/figure.png)
+
 # MERC
 
 MERC is a structural knowledge-graph foundation model for zero-shot link
