@@ -1,4 +1,4 @@
-![MERC](figure/figure.pdf)
+![MERC](figure/figure.png)
 
 # MERC
 
