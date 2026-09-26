@@ -1,0 +1,15 @@
+# Relation-stratified evaluation caps used for six oversized biomedical graphs.
+# The full post-split files were retained locally as validf.txt and testf.txt;
+# the sampled files used for evaluation are valid.txt and test.txt.
+seed: 42
+valid_input: validf.txt
+test_input: testf.txt
+valid_output: valid.txt
+test_output: test.txt
+datasets:
+  COMPARTMENTS: 0.108
+  DISEASES: 0.083
+  Human_Protein_Atlas_pathology: 0.127
+  SMPDB: 0.130
+  TISSUES: 0.060
+  UniProt: 0.025

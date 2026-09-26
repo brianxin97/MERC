@@ -1,0 +1,14 @@
+# 13 held-out transductive graphs
+CoDExSmall
+CoDExLarge
+NELL995
+YAGO310
+WDsinger
+NELL23k
+FB15k237_10
+FB15k237_20
+FB15k237_50
+DBpedia100k
+Hetionet
+AristoV4
+ConceptNet100k

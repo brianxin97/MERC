@@ -1,0 +1,36 @@
+output_dir: {{ project_root }}/output/relation_probe
+
+dataset:
+  class: NELL995
+  root: {{ project_root }}/datasets
+
+model:
+  class: Merc
+  relation_model:
+    hidden_dim: 32
+    num_heads: 4
+  entity_model:
+    input_dim: 32
+    hidden_dims: [32, 32, 32, 32, 32, 32]
+    model_list: [rotate, split, dual]
+    aggregate_func: sum
+    short_cut: yes
+    layer_norm: yes
+    attn_dropout: 0.1
+    entropy_reg_weight: 0.003
+
+train:
+  gpus: auto
+  batch_size: 1
+
+analysis:
+  split: test
+  max_samples_per_relation: 32
+  sampling_seed: 1024
+  bootstrap_seed: 1024
+  bootstrap_samples: 10000
+  probe_batch_size: 1
+  verify_single_candidate: yes
+  max_plotted_relations: 200
+
+checkpoint: {{ ckpt }}

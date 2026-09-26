@@ -1,0 +1,13 @@
+.DS_Store
+.venv/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+datasets/
+output/
+work/
+log.txt
+working_dir.tmp

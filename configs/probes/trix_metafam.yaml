@@ -1,0 +1,49 @@
+output_dir: {{ output_root }}
+
+dataset:
+  class: Metafam
+  root: {{ data_root }}
+  version: Metafam
+
+model:
+  class: TRIX
+  relation_model:
+    class: NBFNet
+    input_dim: 32
+    hidden_dims: [32, 32, 32]
+    message_func: distmult
+    aggregate_func: sum
+    short_cut: yes
+    layer_norm: yes
+  entity_model_1:
+    class: IndNBFNet
+    input_dim: 32
+    hidden_dims: [32, 32]
+    message_func: distmult
+    aggregate_func: sum
+    short_cut: yes
+    layer_norm: yes
+  entity_model_2:
+    class: IndNBFNet
+    input_dim: 32
+    hidden_dims: [32, 32, 32, 32]
+    message_func: distmult
+    aggregate_func: sum
+    short_cut: yes
+    layer_norm: yes
+
+train:
+  gpus: {{ gpus }}
+  batch_size: 8
+
+analysis:
+  split: valid
+  max_samples_per_relation: null
+  sampling_seed: 1024
+  bootstrap_seed: 1024
+  bootstrap_samples: 10000
+  probe_batch_size: 8
+  verify_single_candidate: yes
+  min_samples: 3
+
+checkpoint: {{ ckpt }}
